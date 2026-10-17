@@ -1,0 +1,70 @@
+{
+  "name": "@tiledev/sdk-analytics-meta",
+  "version": "0.1.0",
+  "description": "Meta (Facebook) App Events for React Native — a provider adapter for @tiledev/sdk-analytics-core backed by react-native-fbsdk-next, plus an Expo config plugin that wires the native Facebook SDK (App Id + Client Token). Reports the catalogue's e-commerce events as Facebook conversion events for ad attribution and optimisation.",
+  "license": "UNLICENSED",
+  "private": false,
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "files": [
+    "dist",
+    "app.plugin.js",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "lint": "tsc --noEmit -p tsconfig.json"
+  },
+  "keywords": [
+    "tile",
+    "tilepacket",
+    "analytics",
+    "meta",
+    "facebook",
+    "fbsdk",
+    "app-events",
+    "conversions",
+    "ad-attribution",
+    "react-native",
+    "expo"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@tiledev/sdk-analytics-core": ">=0.1.0",
+    "react": ">=17",
+    "react-native": ">=0.71",
+    "react-native-fbsdk-next": ">=13"
+  },
+  "peerDependenciesMeta": {
+    "react-native-fbsdk-next": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@expo/config-plugins": "^10.0.0",
+    "@tiledev/sdk-analytics-core": "^0.1.0",
+    "@types/react": "^18.2.0",
+    "expo": "^54.0.0",
+    "react": "^18.2.0",
+    "react-native": "^0.76.0",
+    "react-native-fbsdk-next": "^13.4.1",
+    "typescript": "^5.0.0"
+  }
+}
